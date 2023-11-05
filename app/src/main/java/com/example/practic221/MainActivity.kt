@@ -59,8 +59,8 @@ class MainActivity : AppCompatActivity(){
             Response.Listener { response ->
                 GlobalScope.launch {
                     conversionResult = JSONObject(response).getDouble("result")
-                    conversionResult = String.format("%.2f", conversionResult).toDouble()
-                    amount = String.format("%.2f", amount).toDouble()
+                    conversionResult = String.format("%.2f", conversionResult).replace(',','.').toDouble()
+                    amount = String.format("%.2f", amount).replace(',','.').toDouble()
                     repository.insertConversion(
                         ConversionsEntity(
                             0,

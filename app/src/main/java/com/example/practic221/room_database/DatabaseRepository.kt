@@ -48,6 +48,13 @@ class DatabaseRepository(private val database: AppDatabase, private val context:
         database.databaseDao().deleteConversion(conversion)
     }
 
+    suspend fun updateUser(user:UserdataEntity){
+        database.databaseDao().updateUser(user)
+    }
+    suspend fun updateConversion(conversion: ConversionsEntity){
+        database.databaseDao().updateConversions(conversion)
+    }
+
     private fun showMessage(message: String) {
         Handler(Looper.getMainLooper()).post {
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()

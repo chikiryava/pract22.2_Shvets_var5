@@ -45,8 +45,8 @@ class ConversionsAdapter :RecyclerView.Adapter<ConversionsAdapter.ConversionsVie
         conversionsList = conversion
         notifyDataSetChanged()
     }
-    interface OnButtonClickListener {
-        fun onButtonClicked(userData: UserdataEntity)
+    interface OnItemClickListener {
+        fun onItemClicked(conversion: ConversionsEntity)
     }
 
 

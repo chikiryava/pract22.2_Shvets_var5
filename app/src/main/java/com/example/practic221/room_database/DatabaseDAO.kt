@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.example.practic221.entities.ConversionsEntity
 import com.example.practic221.entities.UserdataEntity
 
@@ -28,4 +29,8 @@ interface DatabaseDAO {
     suspend fun deleteUser(user:UserdataEntity)
     @Delete
     suspend fun deleteConversion(conversion: ConversionsEntity)
+    @Update
+    suspend fun updateUser(user:UserdataEntity)
+    @Update
+    suspend fun updateConversions(conversion: ConversionsEntity)
 }
